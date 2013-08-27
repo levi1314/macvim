@@ -15,6 +15,8 @@
 "     ->colortheme 主题,及一些展示上颜色的修改
 "==========================================
 
+call pathogen#infect()
+
 "==========================================
 " General 基础设置
 "==========================================
@@ -395,6 +397,8 @@ map <leader>te :tabedit <c-r>=expand("%:p:h")<cr>/
 "开启语法高亮
 syntax enable
 syntax on
+set background=dark
+colorscheme solarized
 
 " Set extra options when running in GUI mode
 if has("gui_running")
@@ -408,6 +412,9 @@ if has("gui_running")
     set linespace=2
     set noimd
     set t_Co=256
+    set background=light
+else
+    set background=dark
 endif
 
 "设置标记一列的背景颜色和数字一行颜色一致
@@ -424,3 +431,4 @@ highlight clear SpellRare
 highlight SpellRare term=underline cterm=underline
 highlight clear SpellLocal
 highlight SpellLocal term=underline cterm=underline
+
